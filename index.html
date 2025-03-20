@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para maisa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column; /* Adicionando flex-direction para alinhamento em celulares */
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px; /* Limita a largura máxima para telas grandes */
+      height: auto;
+      background: white;
+      border: 10px solid black;
+      border-radius: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 1.6;
+      background: white;
+      background-image: linear-gradient(to bottom, transparent 50%, #f2f2f2 50%);
+      background-size: 100% 30px;
+      background-repeat: repeat-y;
+    }
+
+    .page {
+      display: none;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #333;
+      margin-top: 100px;
+    }
+
+    p {
+      font-family: 'Arial', sans-serif;
+      font-size: 1.5em;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .buttons button {
+      background-color: #ff8c00;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.5em;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+      background-color: #ff5b00;
+    }
+
+    .button-container {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .button-container button {
+      background-color: #007bff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.5em;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Media Queries para dispositivos móveis */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-top: 50px;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+
+      .buttons button,
+      .button-container button {
+        padding: 12px 20px;
+        font-size: 1.2em;
+      }
+
+      .image-gallery img {
+        width: 100px;
+        margin: 8px;
+      }
+
+      .page {
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .buttons button,
+      .button-container button {
+        padding: 10px 15px;
+        font-size: 1em;
+      }
+
+      .image-gallery img {
+        width: 90px;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Página 1 -->
+  <div class="page active" id="page1">
+    <h1>Meu amor, por favor!</h1>
+    <h2>‼️ Eu suplico para você ‼️</h2>
+    <div class="buttons">
+      <button onclick="nextPage(2)">></button>
+    </div>
+  </div>
+
+  <!-- Página 2 -->
+  <div class="page" id="page2">
+    <h1>Tenha fé em mim e em nós, acredite no nosso futuro juntos!</h1>
+    <h2>(De coração! tem que jurar de dedinho ☝️)</h2>
+    <div class="buttons">
+      <button onclick="prevPage(1)"><</button>
+      <button onclick="nextPage(3)">></button>
+    </div>
+  </div>
+
+  <!-- Página 3 -->
+  <div class="page" id="page3">
+    <h1>Eu te dou o mundo inteiro, sem pressa, com todo meu o amor! 🌎</h1>
+    <h2>(Se você quiser, o universo inteiro também! 🌌)</h2>
+    <div class="buttons">
+      <button onclick="prevPage(2)"><</button>
+      <button onclick="nextPage(4)">💌</button>
+    </div>
+  </div>
+
+  <!-- Página 4 -->
+  <div class="page" id="page4">
+    <h1>Eu te amo profundamente! ❤️</h1>
+    <p>Você é a melhor coisa que já aconteceu na minha vida, uma verdadeira bênção para mim. Desde que conheci seus valores, minha vida ganhou um brilho. Vou sempre lutar para que nossa relação seja cheia de amor e respeito. Cada momento ao seu lado é especial e sou grato por isso. Quero te respeitar, apoiar e amar de todas as formas possíveis. Sei que, com paciência, conseguiremos superar qualquer problema, pois o que sinto por você é puro e verdadeiro.</p>
+    <div class="buttons">
+      <button onclick="prevPage(3)"><</button>
+      <button onclick="nextPage(5)">💕</button>
+    </div>
+  </div>
+
+  <!-- Página final - Exibir fotos e declaração -->
+  <div class="page" id="page5">
+    <h1>Você é tudo para mim. Eu te amo!</h1>
+    <div class="image-gallery">
+      <img src="img1.jpeg" alt="Foto 1" style="width: 80px; margin: 10px;">
+      <img src="img2.jpeg" alt="Foto 2" style="width: 97px; margin: 10px;">
+      <img src="img3.jpeg" alt="Foto 3" style="width: 110px; margin: 10px;">
+    </div>
+    <p>Não temos muitas fotos, mas temos muitas memórias e momentos bons.</p>
+    <div class="button-container">
+      <button onclick="prevPage(4)"><</button>
+      <button onclick="finishSurprise()">❓❓❓</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentPage = 1;
+
+  function nextPage(pageNumber) {
+    document.getElementById(`page${currentPage}`).classList.remove('active');
+    currentPage = pageNumber;
+    document.getElementById(`page${currentPage}`).classList.add('active');
+  }
+
+  function prevPage(pageNumber) {
+    document.getElementById(`page${currentPage}`).classList.remove('active');
+    currentPage = pageNumber;
+    document.getElementById(`page${currentPage}`).classList.add('active');
+  }
+
+  function finishSurprise() {
+    alert("Eu te amo! ❤️❤️❤️");
+  }
+</script>
+
+</body>
+</html>
